@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="flex justify-between h-[64px] w-full px-5 py-[9px]">
+        <!-- logo -->
+        <div>
+            <img src="../assets/Logo.png" alt="logo">
+        </div>
+        <!-- menu/profile drop -->
+         <div class=" relative group h-[64px]">
+            <!-- menu -->
+            <div class="flex w-auto max-w-[310px] h-full menu-trigger">
+                <div class="menu-trigger">
+                    <img src="../assets/menu.png" alt="menu">
+                </div>
+            </div>
+
+            <!-- profile drop -->
+                <div class="absolute inset-0 w-full h-screen z-[9999] mt-2 gap-7.5 bg-white shadow-lg p-5 rounded-[6px] opacity-0 transition-opacity duration-200 menu-content
+                lg:z-[9999] lg:absolute lg:inset-auto lg:w-[310px] lg:h-[318px] lg:mt-2 lg:rounded-[6px]
+                md:z-[9999] md:absolute md:inset-auto md:w-[310px] md:h-[318px] md:mt-2 md:rounded-[6px]
+                sm:z-[9999] sm:absolute sm:inset-auto sm:w-auto sm:h-[318px] sm:mt-2 sm:rounded-[6px]">
+
+                <ul class="w-full h-auto max-h-[312px]">
+
+                    <li class="flex items-center gap-2 h-[42px] w-[270px] rounded-[5px] hover:bg-[#f4f5f8]">
+                        <img src="../assets/menu_icons/kolekcje.svg" 
+                            data-normal="../assets/menu_icons/kolekcje.svg" 
+                            data-active="../assets/menu_icons_active/kolekcje-active.svg"
+                            alt="kolekcje ikona" class="w-5 h-5">
+                        <button class="toggle-btn text-[#686868]">Moje kolekcje</button>
+                    </li>
+
+                    <li class="flex items-center gap-2 h-[42px] w-[270px] rounded-[5px] hover:bg-[#f4f5f8]">
+                        <img src="../assets/menu_icons/pobrane.svg" 
+                            data-normal="../assets/menu_icons/pobrane.svg" 
+                            data-active="../assets/menu_icons_active/pobrane-active.svg"
+                            alt="pobrane ikona" class="w-5 h-5">
+                        <button class="toggle-btn text-[#686868]">Pobrania</button>
+                    </li>
+
+                    <li class="flex items-center gap-2 h-[42px] w-[270px] rounded-[5px] hover:bg-[#f4f5f8]">
+                        <img src="../assets/menu_icons/dane.svg" 
+                            data-normal="../assets/menu_icons/dane.svg" 
+                            data-active="../assets/menu_icons_active/dane-active.svg"
+                            alt="dane ikona" class="w-5 h-5">
+                        <button class="toggle-btn text-[#686868]">Edytuj dane</button>
+                    </li>
+
+                    <li class="flex items-center gap-2 h-[42px] w-[270px] rounded-[5px] hover:bg-[#f4f5f8]">
+                        <img src="../assets/menu_icons/historia.svg" 
+                            data-normal="../assets/menu_icons/historia.svg" 
+                            data-active="../assets/menu_icons_active/historia-active.svg"
+                            alt="historia ikona" class="w-5 h-5">
+                        <button class="toggle-btn text-[#686868]">Historia płatności</button>
+                    </li>
+
+                    <li class="flex items-center gap-2 h-[42px] w-[270px] rounded-[5px] hover:bg-[#f4f5f8]">
+                        <img src="../assets/menu_icons/haslo.svg" 
+                            data-normal="../assets/menu_icons/haslo.svg" 
+                            data-active="../assets/menu_icons_active/haslo-active.svg"
+                            alt="haslo ikona" class="w-5 h-5">
+                        <button class="toggle-btn text-[#686868]">Zmień hasło</button>
+                    </li>
+
+                    <li><br></li>
+
+                    <li class="flex items-center gap-2 h-[42px] w-[270px] rounded-[5px] hover:bg-[#f4f5f8]">
+                        <img src="../assets/menu_icons/wyloguj.svg" 
+                            data-normal="../assets/menu_icons/wyloguj.svg" 
+                            data-active="../assets/menu_icons_active/wyloguj-active.svg"
+                            alt="wyloguj ikona" class="w-5 h-5">
+                        <button class="toggle-btn text-[#686868]">Wyloguj się</button>
+                    </li>
+
+                </ul>
+            </div>
+
+            <script>
+                const items = document.querySelectorAll('.toggle-btn');
+
+                items.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const li = btn.parentElement;
+                    const img = li.querySelector('img');
+
+                    const normalSrc = img.dataset.normal;
+                    const activeSrc = img.dataset.active;
+
+                    if (li.classList.contains('active')) {
+                    li.classList.remove('active');
+                    btn.classList.remove('text-[#ff7700]');
+                    btn.classList.add('text-[#686868]');
+                    img.src = normalSrc;
+                    } else {
+                    li.classList.add('active');
+                    btn.classList.remove('text-[#686868]');
+                    btn.classList.add('text-[#ff7700]');
+                    img.src = activeSrc;
+                    }
+                });
+                });
+            </script>
+         </div>
+    </header>
+
+    <main class="flex justify-center">
+        <div>
+            <!-- content -->
+            <div class="w-full max-w-[1170px] mx-auto h-auto block gap-7.5"> 
+
+                <!-- top section -->
+                <div class="flex flex-col w-full h-auto min-h-[82px] gap-5">
+                    <!-- heading-searchbar -->
+                    <div class="flex flex-col sm:flex-row justify-between h-auto min-h-[40px] w-full flex-wrap gap-3">
+                        <!-- heading -->
+                        <div class="flex flex-row items-center w-auto min-w-0 h-auto min-h-[31px] gap-[10px]">
+                            <h4 class="text-[26px] leading-[100%] font-medium [font-family:'Rubik',sans-serif]">
+                                Materiały edukacyjne
+                            </h4>
+                            <span class="text-[16px] text-gray-500 [font-family:'Nunito',sans-serif]">(456)</span>
+                        </div>
+
+                         <!-- searchbar -->
+                          <div class="flex flex-row w-full sm:w-[270px] h-[40px] rounded-[5px] justify-between px-2.5 py-[9px] bg-white [box-shadow:0px_3px_20px_0px_rgba(0,0,139,0.1)]">
+                            <input type="text" placeholder="Szukaj" class="outline-none w-full">
+                            <img src="../assets/search.png" alt="search-icon">
+                          </div>
+                    </div>
+                    <p class="[font-family:'Nunito',sans-serif] font-normal text-base leading-[100%] tracking-normal">
+                        Wczesnoszkolni.pl - Materiały edukacyjne
+                    </p>
+                </div>
+
+                <!-- tile section -->
+                <div class="flex flex-col sm:flex-row w-full h-auto gap-7.5 flex-wrap">
+                    
+                    <!-- tile karta pracy -->
+                    <div class="flex flex-col flex-1 w-full sm:w-[370px] h-auto min-h-[400px] gap-15">
+                        <div class="relative w-full h-[280px] group">
+                            <img src="../assets/tile_section/owl-inspiracje-default.png" alt="inspiracje plastyczne" class="w-full h-full absolute opacity-100 transition-opacity duration-700 group-hover:opacity-0 object-cover">
+                            <img src="../assets/tile_section/owl-inspiracje-hover.png" alt="inspiracje plastyczne" class="w-full h-full absolute opacity-0 transition-opacity duration-700 group-hover:opacity-100 object-cover">
+                        </div>
+
+                        <button class="group relative">
+                            <img src="../assets/tile_section/karty-pracy/kp-btn-default.png" alt="karty pracy" class="absolute opacity-70 transition-opacity duration-500 group-hover:opacity-0">
+                            <img src="../assets/tile_section/karty-pracy/kp-btn-hover.png" alt="karty pracy" class="absolute opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        </button>
+                    </div>
+
+                    <!-- tile inspiracje -->
+                    <div class="flex flex-col flex-1 w-full sm:w-[370px] h-auto min-h-[400px] gap-15">
+                        <div class="relative w-full h-[280px] group">
+                            <img src="../assets/tile_section/owl-inspiracje-default.png" alt="inspiracje plastyczne" class="w-full h-full absolute opacity-100 transition-opacity duration-700 group-hover:opacity-0 object-cover">
+                            <img src="../assets/tile_section/owl-inspiracje-hover.png" alt="inspiracje plastyczne" class="w-full h-full absolute opacity-0 transition-opacity duration-700 group-hover:opacity-100 object-cover">
+                        </div>
+
+                        <button class="group relative">
+                            <img src="../assets/tile_section/inspiracje-plastyczne/ip-btn-default.png" alt="karty pracy" class="absolute opacity-100 transition-opacity duration-500 group-hover:opacity-0">
+                            <img src="../assets/tile_section/inspiracje-plastyczne/ip-btn-hover.png" alt="karty pracy" class="absolute opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        </button>
+                    </div>
+
+                    <!-- tile dyplomy -->
+                    <div class="flex flex-col flex-1 w-full sm:w-[370px] h-auto min-h-[400px] gap-15">
+                        <div class="relative w-full h-[280px] group">
+                            <img src="../assets/tile_section/owl-inspiracje-default.png" alt="inspiracje plastyczne" class="w-full h-full absolute opacity-100 transition-opacity duration-700 group-hover:opacity-0 object-cover">
+                            <img src="../assets/tile_section/owl-inspiracje-hover.png" alt="inspiracje plastyczne" class="w-full h-full absolute opacity-0 transition-opacity duration-700 group-hover:opacity-100 object-cover">
+                        </div>
+
+                        <button class="group relative">
+                            <img src="../assets/tile_section/dyplomy/dp-btn-default.png" alt="dyplomy" class="absolute opacity-100 transition-opacity duration-500 group-hover:opacity-0">
+                            <img src="../assets/tile_section/dyplomy/dp-btn-hover.png" alt="dyplomy" class="absolute opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
